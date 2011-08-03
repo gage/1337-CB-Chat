@@ -2,7 +2,7 @@
 *
 
 # But not these files...
-!./CB
-!./.gitignore
-!./chat/src
-!./chat/boss.config
+!CB
+!.gitignore
+!chat/src
+!chat/boss.config
