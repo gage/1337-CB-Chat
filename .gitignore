@@ -1,8 +1,10 @@
-# Ignore everything
-*
+CB/ebin/*.beam
+CB/ebin/boss.app
+CB/src/aleppo/aleppo_parser.erl
+CB/src/erlydtl/erlydtl_parser.erl
+CB/src/protobuffs/protobuffs_parser.erl
+CB/src/protobuffs/protobuffs_scanner.erl
 
-# But not these files...
-!CB
-!.gitignore
-!chat/src
+chat/*
 !chat/boss.config
+!chat/src/
