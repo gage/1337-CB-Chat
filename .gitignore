@@ -2,5 +2,6 @@
 *
 
 # But not these files...
+!.gitignore
 !chat/src
 !chat/boss.config
