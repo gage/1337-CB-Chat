@@ -1,0 +1,18 @@
+
+=INFO REPORT==== 3-Aug-2011::14:38:20 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 3-Aug-2011::14:38:20 ===
+    application: mongodb
+    exited: {bad_return,
+                {{mongodb_app,start,[normal,[]]},
+                 {'EXIT',
+                     {undef,
+                         [{mongodb_app,start,[normal,[]]},
+                          {application_master,start_it_old,4}]}}}}
+    type: temporary
+
+=INFO REPORT==== 3-Aug-2011::14:38:20 ===
+    application: boss
+    exited: {shutdown,{boss_app,start,[normal,[]]}}
+    type: temporary

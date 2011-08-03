@@ -1,0 +1,8 @@
+
+=INFO REPORT==== 3-Aug-2011::14:44:29 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 3-Aug-2011::14:44:29 ===
+    application: boss
+    exited: {shutdown,{boss_app,start,[normal,[]]}}
+    type: temporary
