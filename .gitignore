@@ -1,6 +1,8 @@
-ebin/*.beam
-ebin/boss.app
-src/aleppo/aleppo_parser.erl
-src/erlydtl/erlydtl_parser.erl
-src/protobuffs/protobuffs_parser.erl
-src/protobuffs/protobuffs_scanner.erl
+CB/ebin/*.beam
+CB/ebin/boss.app
+CB/src/aleppo/aleppo_parser.erl
+CB/src/erlydtl/erlydtl_parser.erl
+CB/src/protobuffs/protobuffs_parser.erl
+CB/src/protobuffs/protobuffs_scanner.erl
+.beam
+.log
