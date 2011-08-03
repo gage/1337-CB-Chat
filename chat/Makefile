@@ -7,7 +7,7 @@ all:
 clean:
 	rm -fv ebin/*.beam
 	rm -fv ebin/$(APP).app
-
+	
 update_po:
 	$(ERL) -pa ebin -pa ../ChicagoBoss/ebin -eval 'boss_load:load_models("ebin")' -eval 'boss_lang:update_po()' -s init stop -noshell
 
