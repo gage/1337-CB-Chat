@@ -1,0 +1,30 @@
+{variables, [{appid, "bossapp"},
+    {port, 8001},
+    {src, "../ChicagoBoss"},
+    {dest, "{{appid}}"}]}.
+{dir, "{{dest}}"}.
+{dir, "{{dest}}/log"}.
+{dir, "{{dest}}/priv/lang"}.
+{dir, "{{dest}}/ebin"}.
+{dir, "{{dest}}/include"}.
+{dir, "{{dest}}/src/lib"}.
+{dir, "{{dest}}/src/view"}.
+{dir, "{{dest}}/src/view/lib"}.
+{dir, "{{dest}}/src/model"}.
+{dir, "{{dest}}/src/controller"}.
+{dir, "{{dest}}/src/mail/view"}.
+{dir, "{{dest}}/src/test"}.
+{template, "skel/start-dev.sh", "{{dest}}/start-dev.sh"}.
+{template, "skel/start.sh", "{{dest}}/start.sh"}.
+{template, "skel/start-server.bat", "{{dest}}/start-server.bat"}.
+{template, "skel/Makefile", "{{dest}}/Makefile"}.
+{template, "skel/project.app.src", "{{dest}}/{{appid}}.app.src"}.
+{template, "skel/boss.config", "{{dest}}/boss.config"}.
+{file, "skel/src/mail/outgoing_mail_controller.erl", "{{dest}}/src/mail/{{appid}}_outgoing_mail_controller.erl"}.
+{file, "skel/src/mail/incoming_mail_controller.erl", "{{dest}}/src/mail/{{appid}}_incoming_mail_controller.erl"}.
+{file, "skel/priv/static/chicago-boss.png", "{{dest}}/priv/static/chicago-boss.png"}.
+{file, "skel/priv/static/favicon.ico", "{{dest}}/priv/static/favicon.ico"}.
+{file, "skel/priv/boss.routes", "{{dest}}/priv/{{appid}}.routes"}.
+{file, "skel/src/init/news.erl", "{{dest}}/src/init/{{appid}}_news.erl"}.
+{chmod, 8#755, "{{dest}}/start-dev.sh"}.
+{chmod, 8#755, "{{dest}}/start.sh"}.
