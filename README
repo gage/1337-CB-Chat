@@ -1,0 +1,17 @@
+!!! Now the boss.config is using mongodb and memcached !!!
+
+***** prepare mongodb *****
+cd CB
+make mongodb
+
+# and make sure mongodb is running
+mongod
+
+
+***** install memcached *****
+# Mac OS
+sudo port install memcached
+sudo port load memcached
+
+# Others
+http://code.google.com/p/memcached/wiki/NewStart
