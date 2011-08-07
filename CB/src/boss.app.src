@@ -1,0 +1,22 @@
+{application, boss,
+    [
+    {description, "Chicago Boss web framework"},
+    {vsn, "0.5.4"},
+    {registered, [
+        boss_cache, boss_cache_sup,
+        boss_db, boss_db_sup, 
+        boss_db_mock, boss_db_mock_sup,
+        boss_mq, boss_mq_sup,
+        boss_news, boss_news_sup,
+        boss_session, boss_session_sup,
+        boss_session_mock, boss_session_mock_sup
+        ]},
+    {modules, []},
+    {applications, [
+        kernel,
+        stdlib,
+        crypto
+            ]},
+    {mod, {boss_app, []}},
+    {env, []}
+    ]}.
