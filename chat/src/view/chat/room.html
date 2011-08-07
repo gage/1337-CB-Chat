@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LEET Chat!</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script>
+        var chat_room_name = '{{ room_name }}';
+        var chat_user_name = '{{ user_name }}';
+    </script>
+</head>
+<body>
+    <div>
+        <h3>{{ user_name }}</h3>
+        <input id="id_msg" name="msg" value="" placeholder="say something here ..." >
+    </div>
+    <ul id="id_chats">
+    </ul>
+    <script>
+    $(function(){
+        function pull(){
+            $.ajax({
+                url: '/chat/pull/'+chat_room_name+'/',
+                type: 'GET',
+                dataType: 'html',
+                success: function(data){
+                    console.log(data);
+                    $('#id_chats').prepend('<li>'+data+'</li>');
+                    pull();
+                }
+            });
+        }
+
+        function send_message(){
+            $.ajax({
+                url: '/chat/message/',
+                type: 'POST',
+                data: {room_name:chat_room_name,user_name:chat_user_name,msg:$('#id_msg').val()},
+                dataType: 'html',
+                success: function(data){
+                    console.log(data);
+                    $('#id_msg').val('');
+                }
+            });
+        }
+        $('#id_msg').keypress(function(e){
+            var code = (e.keyCode ? e.keyCode : e.which);
+            if(code==13){
+                send_message();
+            }
+        });
+        pull();
+    });
+    </script>
+</body>
+</html>
