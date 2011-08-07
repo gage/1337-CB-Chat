@@ -2,7 +2,7 @@
 -author('emmiller@gmail.com').
 -define(DATABASE_MODULE, boss_db).
 
--export([compile/1, compile/2, edoc_module/1, edoc_module/2]).
+-export([compile/1, compile/2, edoc_module/1, edoc_module/2, trick_out_forms/1]).
 
 %% @spec compile( File::string() ) -> {ok, Module} | {error, Reason}
 %% @equiv compile(File, [])
@@ -10,7 +10,7 @@ compile(File) ->
     compile(File, []).
 
 compile(File, Options) ->
-    boss_compiler:compile(File, 
+    boss_compiler:compile(File,
         [{pre_revert_transform, fun ?MODULE:trick_out_forms/1}|Options]).
 
 %% @spec edoc_module( File::string() ) -> {Module::atom(), EDoc}
@@ -23,7 +23,7 @@ edoc_module(File) ->
 %% compiled as a BossRecord.
 edoc_module(File, Options) ->
     {ok, Forms} = boss_compiler:parse(File),
-    edoc_extract:source(trick_out_forms(Forms), edoc:read_comments(File), 
+    edoc_extract:source(trick_out_forms(Forms), edoc:read_comments(File),
         File, edoc_lib:get_doc_env([]), Options).
 
 trick_out_forms([
@@ -42,7 +42,7 @@ trick_out_forms(Forms, ModuleName, Parameters) ->
         end, [], Attributes),
 
     override_functions(
-        lists:reverse(OtherForms) ++ 
+        lists:reverse(OtherForms) ++
         save_forms(ModuleName) ++
         validate_forms(ModuleName) ++
         set_attributes_forms(ModuleName, Parameters) ++
@@ -64,9 +64,9 @@ override_functions([{'function', _, Name, Arity, _} = Function|Rest], Acc, Defin
         true -> override_functions(Rest, Acc, DefinedFunctions);
         false -> override_functions(Rest, [Function|Acc], [{Name, Arity}|DefinedFunctions])
     end;
-override_functions([{tree, 'function', _, {'function', {tree, 'atom', _, Name}, 
+override_functions([{tree, 'function', _, {'function', {tree, 'atom', _, Name},
                 [{tree, 'clause', _, {'clause', Args, _, _}}|_]
-            }} = Function|Rest], 
+            }} = Function|Rest],
     Acc, DefinedFunctions) ->
     Arity = length(Args),
     case lists:member({Name, Arity}, DefinedFunctions) of
@@ -88,7 +88,7 @@ validate_forms(ModuleName) ->
                         "% or `false' if it is invalid. `ErrorMessage' should be a (constant) string that will be ",
                         "% included in `ErrorMessages' if the associated `TestFunction' returns `false' on this ",
                         lists:concat(["% particular `", ModuleName, "'."])
-                    ])], 
+                    ])],
             erl_syntax:function(
                 erl_syntax:atom(validate),
                 [erl_syntax:clause([], none,
@@ -111,9 +111,9 @@ save_forms(ModuleName) ->
                                 erl_syntax:atom(?DATABASE_MODULE),
                                 erl_syntax:atom(save_record),
                                 [erl_syntax:variable("THIS")]
-                            )])]))].  
+                            )])]))].
 parameter_getter_forms(Parameters) ->
-    lists:map(fun(P) -> 
+    lists:map(fun(P) ->
                 erl_syntax:add_precomments([erl_syntax:comment(
                         [lists:concat(["% @spec ", parameter_to_colname(P), "() -> ", P]),
                             lists:concat(["% @doc Returns the value of `", P, "'"])])],
@@ -127,8 +127,8 @@ parameter_setter_forms(ModuleName, Parameters) ->
         fun(P) ->
                 erl_syntax:add_precomments([erl_syntax:comment(
                         [
-                            lists:concat(["% @spec ", parameter_to_colname(P), "( ", P, "::", 
-                                    case lists:suffix("Time", atom_to_list(P)) of 
+                            lists:concat(["% @spec ", parameter_to_colname(P), "( ", P, "::",
+                                    case lists:suffix("Time", atom_to_list(P)) of
                                         true -> "tuple()";
                                         false -> "string()"
                                     end, " ) -> ", inflector:camelize(atom_to_list(ModuleName))]),
@@ -216,7 +216,7 @@ belongs_to_list_forms(BelongsToList) ->
                 erl_syntax:atom(belongs_to_names),
                 [erl_syntax:clause([], none, [erl_syntax:list(lists:map(
                                     fun(P) -> erl_syntax:atom(P) end, BelongsToList))])])),
-    
+
     erl_syntax:add_precomments([erl_syntax:comment(
                 ["% @spec belongs_to() -> [{atom(), BossRecord}]",
                     lists:concat(["% @doc Retrieve all of the `belongs_to' associations at once."])])],
@@ -255,7 +255,7 @@ has_one_forms(HasOne, ModuleName, Opts) ->
 
 has_many_forms(HasMany, ModuleName, many, Opts) ->
     has_many_forms(HasMany, ModuleName, 1000000, Opts);
-has_many_forms(HasMany, ModuleName, Limit, Opts) -> 
+has_many_forms(HasMany, ModuleName, Limit, Opts) ->
     Sort = proplists:get_value(sort_by, Opts, 'id'),
     SortOrder = proplists:get_value(sort_order, Opts, str_ascending),
     Singular = inflector:singularize(atom_to_list(HasMany)),
@@ -273,7 +273,7 @@ has_many_forms(HasMany, ModuleName, Limit, Opts) ->
         erl_syntax:add_precomments([erl_syntax:comment(
                     [
                         lists:concat(["% @spec first_", Singular, "() -> ", Type, " | undefined"]),
-                        lists:concat(["% @doc Retrieves the first `", Type, 
+                        lists:concat(["% @doc Retrieves the first `", Type,
                                 "' that would be returned by `", HasMany, "()'"])])],
             erl_syntax:function(erl_syntax:atom("first_"++Singular),
                 [erl_syntax:clause([], none, [
@@ -307,7 +307,7 @@ reverse_sort_order(num_descending) -> num_ascending.
 
 has_many_application_forms(Type, ForeignKey, Limit, Sort, SortOrder) ->
     erl_syntax:application(
-        erl_syntax:atom(?DATABASE_MODULE), 
+        erl_syntax:atom(?DATABASE_MODULE),
         erl_syntax:atom(find),
         [erl_syntax:atom(Type),
             erl_syntax:list([
@@ -323,10 +323,10 @@ has_many_application_forms(Type, ForeignKey, Limit, Sort, SortOrder) ->
 
 belongs_to_forms(Type, BelongsTo, ModuleName) ->
     erl_syntax:add_precomments([erl_syntax:comment(
-                [lists:concat(["% @spec ", BelongsTo, "() -> ", 
+                [lists:concat(["% @spec ", BelongsTo, "() -> ",
                             inflector:camelize(atom_to_list(BelongsTo))]),
-                    lists:concat(["% @doc Retrieves the ", Type, 
-                            " with `Id' equal to the `", 
+                    lists:concat(["% @doc Retrieves the ", Type,
+                            " with `Id' equal to the `",
                             inflector:camelize(atom_to_list(BelongsTo)), "Id'",
                            " of this ", ModuleName])])],
         erl_syntax:function(erl_syntax:atom(BelongsTo),
@@ -384,7 +384,7 @@ counter_incr_forms(Counters) ->
                                     erl_syntax:application(
                                         erl_syntax:atom(?DATABASE_MODULE),
                                         erl_syntax:atom(incr),
-                                        [counter_name_forms(Counter)])]) 
+                                        [counter_name_forms(Counter)])])
                     end, Counters))),
         erl_syntax:add_precomments([erl_syntax:comment(
                     ["% @spec incr( Counter::atom(), Increment::integer() ) ->"++

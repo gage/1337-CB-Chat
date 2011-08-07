@@ -8,7 +8,7 @@ compile(File) ->
 compile(File, Options) ->
     case parse(File) of
         {ok, Forms} ->
-            CompilerOptions = proplists:get_value(compiler_options, Options, 
+            CompilerOptions = proplists:get_value(compiler_options, Options,
                 [verbose, return_errors]),
             NewForms = case proplists:get_value(pre_revert_transform, Options) of
                 undefined ->

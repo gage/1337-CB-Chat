@@ -5,9 +5,12 @@ CB/src/erlydtl/erlydtl_parser.erl
 CB/src/protobuffs/protobuffs_parser.erl
 CB/src/protobuffs/protobuffs_scanner.erl
 
-chat/*
-!chat/boss.config
-!chat/src/
-!chat/priv/
+*/ebin/*.beam
+
+#chat/*
+#!chat/boss.config
+#!chat/src/
+#!chat/priv/
 
 *.swp
+*.DS_Store

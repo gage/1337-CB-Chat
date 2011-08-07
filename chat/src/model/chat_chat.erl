@@ -1,0 +1,2 @@
+-module(chat_chat, [Id, Message, Time]).
+-compile(export_all).

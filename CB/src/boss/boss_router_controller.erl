@@ -29,7 +29,7 @@ init(Options) ->
     Controllers = proplists:get_value(controllers, Options, []),
     RoutesTableId = ets:new(?BOSS_ROUTES_TABLE, [ordered_set, public, {keypos, 2}]),
     HandlersTableId = ets:new(?BOSS_HANDLERS_TABLE, [ordered_set, public, {keypos, 2}]),
-    State = #state{ application = BossApp, routes_table_id = RoutesTableId, 
+    State = #state{ application = BossApp, routes_table_id = RoutesTableId,
         handlers_table_id = HandlersTableId, controllers = Controllers },
     load(State),
     {ok, State}.
@@ -49,18 +49,20 @@ handle_call({handle, StatusCode}, _From, State) ->
             {ok, {C, A, Tokens}}
     end,
     {reply, Result, State};
+handle_call({route, ""}, From, State) ->
+    handle_call({route, "/"}, From, State);
 handle_call({route, Url}, _From, State) ->
     Route = case ets:lookup(State#state.routes_table_id, Url) of
-        [] -> 
+        [] ->
             case string:tokens(Url, "/") of
-                [Controller] -> 
+                [Controller] ->
                     {ok, {Controller, default_action(State, Controller), []}};
                 [Controller, Action|Params] ->
                     {ok, {Controller, Action, Params}};
                 _ ->
                     not_found
             end;
-        [#boss_route{ controller = C, action = A, params = P }] -> 
+        [#boss_route{ controller = C, action = A, params = P }] ->
             ControllerModule = list_to_atom(boss_files:web_controller(State#state.application, C)),
             {Tokens, []} = convert_params_to_tokens(P, ControllerModule, list_to_atom(A)),
             {ok, {C, A, Tokens}}
@@ -105,7 +107,7 @@ handle_call({unroute, Controller, Action, Params}, _From, State) ->
     end,
     {reply, Result, State};
 handle_call(get_all, _From, State) ->
-    Res = lists:map(fun(#boss_route{ url = U, controller = C, action = A, params = P }) -> 
+    Res = lists:map(fun(#boss_route{ url = U, controller = C, action = A, params = P }) ->
                 [{url, U}, {controller, C}, {action, A}, {params, P}]
         end, lists:flatten(ets:match(State#state.routes_table_id, '$1'))),
     {reply, Res, State};
@@ -129,12 +131,12 @@ load(State) ->
     RoutesFile = boss_files:routes_file(State#state.application),
     error_logger:info_msg("Loading routes from ~p ....~n", [RoutesFile]),
     case file:consult(RoutesFile) of
-        {ok, Routes} -> 
+        {ok, Routes} ->
             lists:map(fun
-                    ({Url, {Controller, Action}}) when is_list(Url) -> 
+                    ({Url, {Controller, Action}}) when is_list(Url) ->
                         NewRoute = #boss_route{url=Url, controller=Controller, action=Action},
                         true = ets:insert(State#state.routes_table_id, NewRoute);
-                    ({Url, {Controller, Action, Params}}) when is_list(Url) -> 
+                    ({Url, {Controller, Action, Params}}) when is_list(Url) ->
                         NewRoute = #boss_route{url=Url, controller=Controller, action=Action, params=Params},
                         true = ets:insert(State#state.routes_table_id, NewRoute);
                     ({StatusCode, {Controller, Action}}) when is_integer(StatusCode) ->
@@ -146,11 +148,11 @@ load(State) ->
                             action = Action, params = Params },
                         true = ets:insert(State#state.handlers_table_id, NewHandler)
                 end, Routes);
-        Error -> 
+        Error ->
             error_logger:error_msg("Missing or invalid boss.routes file in ~p~n~p~n", [RoutesFile, Error])
     end.
 
-is_controller(State, Controller) -> 
+is_controller(State, Controller) ->
     lists:member(boss_files:web_controller(State#state.application, Controller), State#state.controllers).
 
 default_action(State, Controller) ->
@@ -168,7 +170,7 @@ default_action(State, Controller) ->
     end.
 
 convert_params_to_tokens(Variables, ControllerModule, Action) ->
-    DummyController = apply(ControllerModule, new, lists:seq(1, proplists:get_value(new, ControllerModule:module_info(exports)))), 
+    DummyController = apply(ControllerModule, new, lists:seq(1, proplists:get_value(new, ControllerModule:module_info(exports)))),
     Routes = DummyController:'_routes'(),
     lists:foldr(fun
             ({RouteName, RouteTokens}, {Acc, Vars}) when RouteName =:= Action ->
