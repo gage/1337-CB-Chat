@@ -1,0 +1,1214 @@
+
+=INFO REPORT==== 7-Aug-2011::00:33:50 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 7-Aug-2011::00:33:50 ===
+Starting master services on 'wildbill@Tseng-Gageteki-MacBook'
+
+=INFO REPORT==== 7-Aug-2011::00:33:50 ===
+Loading routes from "../cb_admin/priv/cb_admin.routes" ....
+
+=INFO REPORT==== 7-Aug-2011::00:33:50 ===
+Loading routes from "/Users/Gage/Genie/dev/tmp/chat/priv/chat.routes" ....
+
+=ERROR REPORT==== 7-Aug-2011::00:33:54 ===
+{{badmatch,{error,enoent}},
+ [{boss_record_compiler,edoc_module,2},
+  {boss_web_controller,load_and_execute,5},
+  {boss_web_controller,process_request,5},
+  {boss_web_controller,handle_request,3},
+  {misultin_http,call_mfa,2},
+  {misultin_http,handle_get,2},
+  {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::00:33:54 ===
+GET /doc/chat [chat] 500
+
+=ERROR REPORT==== 7-Aug-2011::00:34:03 ===
+{{badmatch,{error,enoent}},
+ [{boss_record_compiler,edoc_module,2},
+  {boss_web_controller,load_and_execute,5},
+  {boss_web_controller,process_request,5},
+  {boss_web_controller,handle_request,3},
+  {misultin_http,call_mfa,2},
+  {misultin_http,handle_get,2},
+  {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::00:34:03 ===
+GET /doc/chat_ [chat] 500
+
+=ERROR REPORT==== 7-Aug-2011::00:34:04 ===
+{{badmatch,{error,enoent}},
+ [{boss_record_compiler,edoc_module,2},
+  {boss_web_controller,load_and_execute,5},
+  {boss_web_controller,process_request,5},
+  {boss_web_controller,handle_request,3},
+  {misultin_http,call_mfa,2},
+  {misultin_http,handle_get,2},
+  {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::00:34:04 ===
+GET /doc/chat_cha [chat] 500
+
+=INFO REPORT==== 7-Aug-2011::00:34:04 ===
+GET /doc/chat_chat [chat] 200
+
+=ERROR REPORT==== 7-Aug-2011::00:34:04 ===
+GET /doc/stylesheet.css [chat] 404
+
+=ERROR REPORT==== 7-Aug-2011::00:34:04 ===
+GET /doc/erlang.png [chat] 404
+
+=ERROR REPORT==== 7-Aug-2011::00:34:07 ===
+GET / [chat] 404
+
+=INFO REPORT==== 7-Aug-2011::00:34:08 ===
+GET /admin [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:34:09 ===
+GET /admin/model/model [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:34:11 ===
+GET /admin/model/model/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:34:19 ===
+GET /doc/chat_chat [chat] 200
+
+=ERROR REPORT==== 7-Aug-2011::00:34:19 ===
+GET /doc/stylesheet.css [chat] 404
+
+=ERROR REPORT==== 7-Aug-2011::00:34:19 ===
+GET /doc/erlang.png [chat] 404
+
+=ERROR REPORT==== 7-Aug-2011::00:34:30 ===
+GET / [chat] 404
+
+=INFO REPORT==== 7-Aug-2011::00:34:31 ===
+GET /admin [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:34:32 ===
+GET /admin/model/model [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:34:34 ===
+GET /admin/model/model/chat_chat [cb_admin] 200
+
+=ERROR REPORT==== 7-Aug-2011::00:34:48 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.2609>,http,
+                          {127,0,0,1},
+                          60193,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model/create"},
+                          [],
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Referer',
+                               "http://localhost:8001/admin/model/model/chat_chat"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.173.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::00:34:48 ===
+GET /admin/model/create [cb_admin] 500
+
+=INFO REPORT==== 7-Aug-2011::00:35:05 ===
+GET /admin/model/ [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:35:05 ===
+GET /admin/model/ [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:35:06 ===
+GET /admin/model/model/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:36:49 ===
+GET /admin/model/model/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:36:50 ===
+GET /admin/model/show/chat_chat-4e3d6d931120e93df6000001 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:37:03 ===
+GET /admin/model/model/chat_chat [cb_admin] 200
+
+=ERROR REPORT==== 7-Aug-2011::00:37:05 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.2660>,http,
+                          {127,0,0,1},
+                          60316,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model/create"},
+                          [],
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Referer',
+                               "http://localhost:8001/admin/model/model/chat_chat"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.232.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::00:37:05 ===
+GET /admin/model/create [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::00:37:20 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.2660>,http,
+                          {127,0,0,1},
+                          60316,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model/create"},
+                          [],
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {'Cache-Control',"max-age=0"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.237.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::00:37:20 ===
+GET /admin/model/create [cb_admin] 500
+
+=INFO REPORT==== 7-Aug-2011::00:37:22 ===
+GET /admin/model/ [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:37:25 ===
+GET /admin/lang/show [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:37:25 ===
+GET /admin/upgrade/upgrade [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:37:30 ===
+GET /admin/lang/show [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:37:33 ===
+GET /admin/lang/show/chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:37:35 ===
+GET /admin/lang/show/cb_admin [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:37:35 ===
+GET /admin/routes/index [cb_admin] 200
+
+=ERROR REPORT==== 7-Aug-2011::00:37:36 ===
+GET / [chat] 404
+
+=INFO REPORT==== 7-Aug-2011::00:37:41 ===
+GET /admin [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:56:54 ===
+GET /admin/model/model [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::00:56:55 ===
+GET /admin/model/model/chat_chat [cb_admin] 200
+
+=ERROR REPORT==== 7-Aug-2011::00:56:57 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.2724>,http,
+                          {127,0,0,1},
+                          61121,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model/create"},
+                          [],
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Referer',
+                               "http://localhost:8001/admin/model/model/chat_chat"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.330.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::00:56:57 ===
+GET /admin/model/create [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::01:00:00 ===
+GET /admin/model/chat_chatcreate [cb_admin] 404
+
+=ERROR REPORT==== 7-Aug-2011::01:00:01 ===
+GET /admin/model/chat_chat/create [cb_admin] 404
+
+=ERROR REPORT==== 7-Aug-2011::01:00:09 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.2725>,http,
+                          {127,0,0,1},
+                          61228,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model//create"},
+                          [],
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {"X-Purpose","instant"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.339.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:00:09 ===
+GET /admin/model//create [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::01:00:10 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.2725>,http,
+                          {127,0,0,1},
+                          61228,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model/create"},
+                          [],
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {"X-Purpose","instant"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.340.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:00:10 ===
+GET /admin/model/create [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::01:00:22 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.2725>,http,
+                          {127,0,0,1},
+                          61228,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model/create"},
+                          [],
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {"X-Purpose","instant"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.342.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:00:22 ===
+GET /admin/model/create [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::01:00:23 ===
+{badarg,[{erlang,atom_to_list,["chat_chat"]},
+         {cb_admin_model_controller,'-create/3-fun-0-',1},
+         {lists,map,2},
+         {cb_admin_model_controller,create,4},
+         {boss_web_controller,execute_action,5},
+         {boss_web_controller,process_request,5},
+         {boss_web_controller,handle_request,3},
+         {misultin_http,call_mfa,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:00:23 ===
+GET /admin/model/create/chat_chat [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::01:00:30 ===
+{badarg,[{erlang,atom_to_list,["chat_chat"]},
+         {cb_admin_model_controller,'-create/3-fun-0-',1},
+         {lists,map,2},
+         {cb_admin_model_controller,create,4},
+         {boss_web_controller,execute_action,5},
+         {boss_web_controller,process_request,5},
+         {boss_web_controller,handle_request,3},
+         {misultin_http,call_mfa,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:00:30 ===
+GET /admin/model/create/chat_chat/ [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::01:00:56 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.2725>,http,
+                          {127,0,0,1},
+                          61228,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model/create/"},
+                          [],
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {"X-Purpose","instant"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.345.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:00:56 ===
+GET /admin/model/create/ [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::01:00:56 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.2725>,http,
+                          {127,0,0,1},
+                          61228,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model/create"},
+                          [],
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {"X-Purpose","instant"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.346.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:00:56 ===
+GET /admin/model/create [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::01:00:57 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.2725>,http,
+                          {127,0,0,1},
+                          61228,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model/create"},
+                          [],
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {"X-Purpose","instant"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.347.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:00:57 ===
+GET /admin/model/create [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::01:01:50 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.2874>,http,
+                          {127,0,0,1},
+                          61296,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model/create"},
+                          [],
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {"X-Purpose","instant"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.349.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:01:50 ===
+GET /admin/model/create [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::01:01:51 ===
+GET /admin/model/create. [cb_admin] 404
+
+=ERROR REPORT==== 7-Aug-2011::01:01:51 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.2874>,http,
+                          {127,0,0,1},
+                          61296,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model/create"},
+                          [],
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {"X-Purpose","instant"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.351.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:01:51 ===
+GET /admin/model/create [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::01:01:51 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.2874>,http,
+                          {127,0,0,1},
+                          61296,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model/create/"},
+                          [],
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {"X-Purpose","instant"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.352.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:01:51 ===
+GET /admin/model/create/ [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::01:01:52 ===
+{badarg,[{erlang,atom_to_list,["chat_chat"]},
+         {cb_admin_model_controller,'-create/3-fun-0-',1},
+         {lists,map,2},
+         {cb_admin_model_controller,create,4},
+         {boss_web_controller,execute_action,5},
+         {boss_web_controller,process_request,5},
+         {boss_web_controller,handle_request,3},
+         {misultin_http,call_mfa,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:01:52 ===
+GET /admin/model/create/chat_chat [cb_admin] 500
+
+=INFO REPORT==== 7-Aug-2011::01:09:18 ===
+GET /admin/model/create/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:09:22 ===
+GET /admin/model/model [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:09:23 ===
+GET /admin/model/model/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:09:27 ===
+GET /admin/model/model [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:09:28 ===
+GET /admin/model/model/chat_chat [cb_admin] 200
+
+=ERROR REPORT==== 7-Aug-2011::01:09:30 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.3001>,http,
+                          {127,0,0,1},
+                          61605,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model/create"},
+                          [],
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Referer',
+                               "http://localhost:8001/admin/model/model/chat_chat"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.415.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:09:30 ===
+GET /admin/model/create [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::01:09:35 ===
+GET /admin/model/c [cb_admin] 404
+
+=INFO REPORT==== 7-Aug-2011::01:09:35 ===
+GET /admin/model/ [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:09:35 ===
+GET /admin/model/ [cb_admin] 200
+
+=ERROR REPORT==== 7-Aug-2011::01:09:35 ===
+	module: misultin_socket
+	line: 176
+worker crash: closed
+
+=ERROR REPORT==== 7-Aug-2011::01:09:35 ===
+	module: misultin_socket
+	line: 176
+worker crash: closed
+
+=INFO REPORT==== 7-Aug-2011::01:09:37 ===
+GET /admin/model/model/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:09:51 ===
+GET /admin/model/model/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:19:02 ===
+GET /admin/model/model/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:19:02 ===
+POST /admin/model/watch [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:19:32 ===
+POST /admin/model/heartbeat/0 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:19:32 ===
+GET /admin/model/events/1312651142566761 [cb_admin] 200
+
+=ERROR REPORT==== 7-Aug-2011::01:19:48 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.3114>,http,
+                          {127,0,0,1},
+                          62142,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model/create"},
+                          "model=chat_chat",
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {"X-Purpose","instant"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.482.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:19:48 ===
+GET /admin/model/create [cb_admin] 500
+
+=INFO REPORT==== 7-Aug-2011::01:20:02 ===
+GET /admin/model/events/1312651142870039 [cb_admin] 200
+
+=ERROR REPORT==== 7-Aug-2011::01:20:19 ===
+Nonesuch model.
+
+=ERROR REPORT==== 7-Aug-2011::01:20:19 ===
+GET /admin/model/create/=chat_chat [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::01:20:19 ===
+Nonesuch model.
+
+=ERROR REPORT==== 7-Aug-2011::01:20:19 ===
+GET /admin/model/create/=chat_chat [cb_admin] 500
+
+=INFO REPORT==== 7-Aug-2011::01:20:24 ===
+GET /admin/model/create/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:20:25 ===
+GET /admin/model/create/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:20:34 ===
+GET /admin/model/model/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:20:34 ===
+POST /admin/model/watch [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:21:04 ===
+POST /admin/model/heartbeat/1 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:21:04 ===
+GET /admin/model/events/1312651234390545 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:21:34 ===
+POST /admin/model/heartbeat/1 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:21:34 ===
+GET /admin/model/events/1312651234911669 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:22:04 ===
+POST /admin/model/heartbeat/1 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:22:04 ===
+GET /admin/model/events/1312651264919004 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:22:34 ===
+POST /admin/model/heartbeat/1 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:22:34 ===
+GET /admin/model/events/1312651294926881 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:23:04 ===
+POST /admin/model/heartbeat/1 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:23:04 ===
+GET /admin/model/events/1312651324941464 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:23:34 ===
+POST /admin/model/heartbeat/1 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:23:34 ===
+GET /admin/model/events/1312651354950891 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:24:04 ===
+POST /admin/model/heartbeat/1 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:24:04 ===
+GET /admin/model/events/1312651384961255 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:24:34 ===
+POST /admin/model/heartbeat/1 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:24:35 ===
+GET /admin/model/events/1312651414992614 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:25:04 ===
+POST /admin/model/heartbeat/1 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:25:05 ===
+GET /admin/model/events/1312651445001202 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:25:34 ===
+POST /admin/model/heartbeat/1 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:25:35 ===
+GET /admin/model/events/1312651475009835 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:26:04 ===
+POST /admin/model/heartbeat/1 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:26:05 ===
+GET /admin/model/events/1312651505019323 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:26:34 ===
+POST /admin/model/heartbeat/1 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:26:35 ===
+GET /admin/model/events/1312651535029247 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:27:04 ===
+POST /admin/model/heartbeat/1 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:27:05 ===
+GET /admin/model/events/1312651565037799 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:27:07 ===
+GET /admin/model/model/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:27:07 ===
+POST /admin/model/watch [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:27:35 ===
+GET /admin/model/events/1312651595045014 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:27:37 ===
+POST /admin/model/heartbeat/2 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:27:37 ===
+GET /admin/model/events/1312651627553913 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:28:07 ===
+POST /admin/model/heartbeat/2 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:28:07 ===
+GET /admin/model/events/1312651627890891 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:28:37 ===
+POST /admin/model/heartbeat/2 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:28:37 ===
+GET /admin/model/events/1312651657899032 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:29:07 ===
+POST /admin/model/heartbeat/2 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:29:07 ===
+GET /admin/model/events/1312651687906785 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:29:37 ===
+POST /admin/model/heartbeat/2 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:29:37 ===
+GET /admin/model/events/1312651717914325 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:30:07 ===
+POST /admin/model/heartbeat/2 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:30:07 ===
+GET /admin/model/events/1312651747921835 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:30:37 ===
+POST /admin/model/heartbeat/2 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:30:37 ===
+GET /admin/model/events/1312651777944371 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:31:07 ===
+POST /admin/model/heartbeat/2 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:31:07 ===
+GET /admin/model/events/1312651807951952 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:31:37 ===
+POST /admin/model/heartbeat/2 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:31:37 ===
+GET /admin/model/events/1312651837960250 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:32:07 ===
+POST /admin/model/heartbeat/2 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:32:07 ===
+GET /admin/model/events/1312651867968438 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:32:29 ===
+GET /admin/model/model/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:32:30 ===
+POST /admin/model/watch [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:32:37 ===
+GET /admin/model/events/1312651897979040 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:33:00 ===
+POST /admin/model/heartbeat/3 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:33:00 ===
+GET /admin/model/events/1312651949960770 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:33:30 ===
+POST /admin/model/heartbeat/3 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:33:30 ===
+GET /admin/model/events/1312651950286700 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:34:00 ===
+POST /admin/model/heartbeat/3 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:34:00 ===
+GET /admin/model/events/1312651980293222 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:34:30 ===
+POST /admin/model/heartbeat/3 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:34:30 ===
+GET /admin/model/events/1312652010300589 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:34:36 ===
+GET /admin/model/model/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:34:36 ===
+POST /admin/model/watch [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:34:43 ===
+GET /admin/model/create/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:35:00 ===
+GET /admin/model/events/1312652040308797 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:35:06 ===
+GET /admin/model/events/1312652076050590 [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:36:04 ===
+GET /admin/model/create/chat_chat [cb_admin] 200
+
+=ERROR REPORT==== 7-Aug-2011::01:36:09 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.3252>,http,
+                          {127,0,0,1},
+                          62755,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model/create/"},
+                          [],
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {"X-Purpose","instant"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.659.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:36:09 ===
+GET /admin/model/create/ [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::01:36:09 ===
+{function_clause,
+    [{cb_admin_model_controller,create,
+         ['GET',[],undefined,
+          {cb_admin_model_controller,
+              {simple_bridge_request_wrapper,misultin_request_bridge,
+                  {misultin_req,
+                      {req,#Port<0.3252>,http,
+                          {127,0,0,1},
+                          62755,undefined,keep_alive,undefined,
+                          {1,1},
+                          'GET',
+                          {abs_path,"/admin/model/create"},
+                          [],
+                          [{'Host',"localhost:8001"},
+                           {'Connection',"keep-alive"},
+                           {"X-Purpose","instant"},
+                           {'User-Agent',
+                               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},
+                           {'Accept',
+                               "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {'Accept-Language',
+                               "zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4"},
+                           {'Accept-Charset',"Big5,utf-8;q=0.7,*;q=0.3"},
+                           {'Cookie',
+                               "csrftoken=d613b24bc29c77a201714882cf423848; _boss_session=f762c6b70bea23937106bca36d55119fb42349a2"}],
+                          <<>>},
+                      <0.660.0>},
+                  false,[],[],none},
+              "f762c6b70bea23937106bca36d55119fb42349a2"}]},
+     {boss_web_controller,execute_action,5},
+     {boss_web_controller,process_request,5},
+     {boss_web_controller,handle_request,3},
+     {misultin_http,call_mfa,2},
+     {misultin_http,handle_get,2},
+     {misultin_http,body,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:36:09 ===
+GET /admin/model/create [cb_admin] 500
+
+=INFO REPORT==== 7-Aug-2011::01:36:12 ===
+GET /admin/model/ [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:36:13 ===
+GET /admin/model/ [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:36:15 ===
+GET /admin/model/model/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:36:15 ===
+POST /admin/model/watch [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:36:25 ===
+GET /admin/model/create/chat_chat [cb_admin] 200
+
+=INFO REPORT==== 7-Aug-2011::01:36:45 ===
+GET /admin/model/events/1312652175286531 [cb_admin] 200
+
+=ERROR REPORT==== 7-Aug-2011::01:43:32 ===
+{badarg,[{erlang,atom_to_list,["chat_chat"]},
+         {cb_admin_model_controller,'-create/3-fun-0-',1},
+         {lists,map,2},
+         {cb_admin_model_controller,create,4},
+         {boss_web_controller,execute_action,5},
+         {boss_web_controller,process_request,5},
+         {boss_web_controller,handle_request,3},
+         {misultin_http,call_mfa,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:43:32 ===
+GET /admin/model/create/chat_chat [cb_admin] 500
+
+=ERROR REPORT==== 7-Aug-2011::01:55:31 ===
+{badarg,[{erlang,atom_to_list,["chat_chat"]},
+         {cb_admin_model_controller,'-create/3-fun-0-',1},
+         {lists,map,2},
+         {cb_admin_model_controller,create,4},
+         {boss_web_controller,execute_action,5},
+         {boss_web_controller,process_request,5},
+         {boss_web_controller,handle_request,3},
+         {misultin_http,call_mfa,2}]}
+
+=ERROR REPORT==== 7-Aug-2011::01:55:31 ===
+GET /admin/model/create/chat_chat [cb_admin] 500

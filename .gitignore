@@ -1,19 +1,19 @@
-CB/ebin/*.beam
-CB/ebin/boss.app
-CB/src/aleppo/aleppo_parser.erl
-CB/src/erlydtl/erlydtl_parser.erl
-CB/src/protobuffs/protobuffs_parser.erl
-CB/src/protobuffs/protobuffs_scanner.erl
+#CB/ebin/*.beam
+#CB/ebin/boss.app
+#CB/src/aleppo/aleppo_parser.erl
+#CB/src/erlydtl/erlydtl_parser.erl
+#CB/src/protobuffs/protobuffs_parser.erl
+#CB/src/protobuffs/protobuffs_scanner.erl
 
-chat/ebin/*.beam
-cb_admin/ebin/*.beam
-chat/log/*
-cb_admin/ebin/*.beam
+#chat/ebin/*.beam
+#cb_admin/ebin/*.beam
+#chat/log/*
+#cb_admin/ebin/*.beam
 
 #chat/*
 #!chat/boss.config
 #!chat/src/
 #!chat/priv/
 
-*.swp
-*.DS_Store
+#*.swp
+#*.DS_Store
