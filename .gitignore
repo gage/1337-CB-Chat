@@ -5,7 +5,10 @@ CB/src/erlydtl/erlydtl_parser.erl
 CB/src/protobuffs/protobuffs_parser.erl
 CB/src/protobuffs/protobuffs_scanner.erl
 
-*/ebin/*.beam
+chat/ebin/*.beam
+cb_admin/ebin/*.beam
+chat/log/*
+cb_admin/ebin/*.beam
 
 #chat/*
 #!chat/boss.config
