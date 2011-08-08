@@ -6,6 +6,7 @@ CB/src/protobuffs/protobuffs_parser.erl#CB/src/protobuffs/protobuffs_scanner.erl
 
 chat/ebin/*.beam
 chat/ebin/chat.app
+chat/erl_crash.dump
 cb_admin/ebin/*.beam
 chat/log/*
 !chat/log/.gitignore

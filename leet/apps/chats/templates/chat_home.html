@@ -12,7 +12,7 @@
 			Chat room list:
 			<ul>	
 				{% for chatroom in chatrooms%}
-					<li><div class='chat_room_id' id='{{chatroom.title}}'><a href="">{{chatroom.title}}</a></div></li>
+					<li><div class='chat_room_id' id='{{chatroom.id}}'><a href="">{{chatroom.title}}</a></div></li>
 				{% endfor %}
 			</ul>
 		
@@ -49,10 +49,10 @@
 	});
 	
 	$(".chat_room_id").click(function(){
-		var title = $(this).attr("id");
+		var room_id = $(this).attr("id");
 		$("#chat_room_page").children().remove();
-		//$("#chat_room_page").load("{{ chat_server}}/chat/room/"+title+"/?name={{user.username}}");
-		$("#chat_room_page").load("http://www.google.com");
+		$("#chat_room_page").load("/chats/chatroom/"+room_id +"/?name={{user.username}}");
+		
 		
 		return false;
 	

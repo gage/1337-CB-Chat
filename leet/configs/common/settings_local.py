@@ -1,3 +1,2 @@
-
 SITE_ID='4e3fb9c42dde3a46be00001d'
 CHAT_SERVER_DOMAIN = 'localhost:8001'
