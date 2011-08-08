@@ -5,6 +5,7 @@ CB/src/erlydtl/erlydtl_parser.erl
 CB/src/protobuffs/protobuffs_parser.erl#CB/src/protobuffs/protobuffs_scanner.erl
 
 chat/ebin/*.beam
+chat/ebin/chat.app
 cb_admin/ebin/*.beam
 chat/log/*
 !chat/log/.gitignore
