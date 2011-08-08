@@ -15,7 +15,7 @@ room('GET', [RoomName]) ->
 
 pull('GET', [RoomName, Tt]) ->
     io:fwrite("4444:~s,~s\n", [RoomName, Tt]),
-    {ok, Timestamp, Messages} = boss_mq:pull(RoomName, list_to_integer(Tt), 30),
+    {ok, Timestamp, Messages} = boss_mq:pull(RoomName, list_to_integer(Tt)),
     [Msg|_] = Messages,
     io:fwrite("3333333:~s,~s,~s\n", [RoomName, Tt, Msg]),
     {json, [{message,Msg}, {timestamp,Timestamp}]}.
