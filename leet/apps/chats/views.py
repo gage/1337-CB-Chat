@@ -12,7 +12,7 @@ def chat_home(request):
     return render_to_response("chat_home.html", {
         'user': request.user,
         'chatrooms': Chatroom.objects.all(),
-        'chat_server':settings.CHAT_SERVER_DOMAIN,
+        #'chat_server':settings.CHAT_SERVER_DOMAIN,
     },context_instance=RequestContext( request ))
     
 @login_required(login_url='/registration/accounts/login/')
