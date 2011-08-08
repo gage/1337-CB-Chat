@@ -19,3 +19,4 @@ cb_admin/ebin/*.beam
 *.swp
 *.DS_Store
 *.project
+*.pyc

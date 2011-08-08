@@ -117,7 +117,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'leet.configs.common.urls'
 
 
-TEMPLATE_DIRS = ( 
+TEMPLATE_DIRS = (
     os.path.join(SITE_ROOT, 'templates'),
  )
 
@@ -133,8 +133,9 @@ INSTALLED_APPS = (
     'globals',
     'registration',
     'chats',
-    
-    #3rd party 
+    'httpproxy',
+
+    #3rd party
     'dbindexer',
     'djangotoolbox',
     # Uncomment the next line to enable the admin:
@@ -166,7 +167,8 @@ LOGGING = {
     }
 }
 
-
+PROXY_DOMAIN = 'localhost'
+PROXY_PORT = 8001
 
 # Allow for local (per-user) override
 try:
