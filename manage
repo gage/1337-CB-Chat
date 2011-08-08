@@ -1,0 +1,2 @@
+#!/bin/sh
+python ./leet/configs/${DEPLOYMENT_TARGET:="common"}/manage.py $*
