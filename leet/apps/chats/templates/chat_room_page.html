@@ -1,11 +1,11 @@
 
-<body>
+<div>
 	<script>
         var chat_room_name = '{{ room.title }}';
         var chat_user_name = '{{ user.username }}';
-        var timestamp = {% now "U" %};
+        var timestamp = {% now "U" %} * 1000000 + {% now "u" %};
     </script>
-    
+
     <div>
         <h3>{{ user.username }} @ {{ room.title }}</h3>
         <input id="id_msg" name="msg" value="" placeholder="say something here ..." >
@@ -26,9 +26,9 @@
                             $('#id_chats').prepend('<li>'+data.message+'</li>');
                         }
                         pull(data.timestamp);
-                    }/*else{
-                        pull(new Date().getTime() *1000);
-                    }*/
+                    }else{
+                        pull(timestamp);
+                    }
                 }
             });
         }
@@ -55,5 +55,5 @@
         pull(timestamp);
     });
     </script>
-</body>
+</div>
 
