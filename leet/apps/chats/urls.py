@@ -7,6 +7,7 @@ from django.contrib.auth.views import login, logout
 
 urlpatterns = patterns('chats.views',
     url(r'^chat_home/$', 'chat_home', name="chat-home"),
+    url(r'^chatroom/(?P<room_id>\w+)/$', 'chat_room_page', name="chat-room-page"),
     
 )
 

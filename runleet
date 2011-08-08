@@ -1,2 +1,2 @@
 #!/bin/sh
-./chat/start-dev.sh
+python ./leet/configs/${DEPLOYMENT_TARGET:="common"}/manage.py runserver 8080
