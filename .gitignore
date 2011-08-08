@@ -20,3 +20,6 @@ cb_admin/ebin/*.beam
 *.DS_Store
 *.project
 *.pyc
+
+
+leet/configs/common/settings_local.py
