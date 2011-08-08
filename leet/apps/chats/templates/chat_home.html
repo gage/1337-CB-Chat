@@ -7,8 +7,9 @@
 		<input type="submit" value="Submit" />
 		</form>
 		
-		
+		<br>
 		<div id='chatroom_list'>
+			Chat room list:
 			<ul>	
 				{% for chatroom in chatrooms%}
 					<li><div class='chat_room_id' id='{{chatroom.title}}'><a href="">{{chatroom.title}}</a></div></li>
