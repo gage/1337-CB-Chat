@@ -20,7 +20,7 @@
     $(function(){
         function pull(tt){
             $.ajax({
-                url: '/chat/pull/'+chat_room_name+'/'+tt+'/',
+                url: '/chatserver/chat/pull/'+chat_room_name+'/'+tt+'/',
                 type: 'GET',
                 dataType: 'json',
                 success: function(data){
@@ -39,7 +39,7 @@
 
         function send_message(){
             $.ajax({
-                url: '/chat/message/',
+                url: '/chatserver/chat/message/',
                 type: 'POST',
                 cache: false,
                 data: {room_name:chat_room_name,user_name:chat_user_name,msg:$('#id_msg').val()},
