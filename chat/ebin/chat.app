@@ -3,7 +3,7 @@
               {vsn,"0.0.1"},
               {modules,[incoming_mail_controller,outgoing_mail_controller,
                         chat_chat_controller,chat_chat,chat_view_lib,
-                        chat_view_chat_list_html]},
+                        chat_view_chat_list_html,chat_view_chat_room_html]},
               {registered,[]},
               {applications,[kernel,stdlib,crypto,boss]},
               {env,[{test_modules,[]},
@@ -13,4 +13,5 @@
                     {controller_modules,[chat_chat_controller]},
                     {model_modules,[chat_chat]},
                     {view_lib_modules,[chat_view_lib]},
-                    {view_modules,[chat_view_chat_list_html]}]}]}.
+                    {view_modules,[chat_view_chat_list_html,
+                                   chat_view_chat_room_html]}]}]}.
