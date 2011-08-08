@@ -133,7 +133,6 @@ INSTALLED_APPS = (
     'globals',
     'registration',
     'chats',
-    'httpproxy',
 
     #3rd party
     'dbindexer',
@@ -167,8 +166,6 @@ LOGGING = {
     }
 }
 
-PROXY_DOMAIN = 'localhost'
-PROXY_PORT = 8001
 
 # Allow for local (per-user) override
 try:
