@@ -51,7 +51,8 @@
 	$(".chat_room_id").click(function(){
 		var title = $(this).attr("id");
 		$("#chat_room_page").children().remove();
-		$("#chat_room_page").load("{{ chat_server}}/chat/room/"+title+"/?name={{user.username}}");
+		//$("#chat_room_page").load("{{ chat_server}}/chat/room/"+title+"/?name={{user.username}}");
+		$("#chat_room_page").load("http://www.google.com");
 		
 		return false;
 	

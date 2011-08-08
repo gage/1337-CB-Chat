@@ -20,14 +20,14 @@ DATABASES = {
     'default': {
     	'ENGINE': 'dbindexer',
     	'TARGET': 'mongodb',
-        'NAME': 'leet',
-        'TEST_NAME': 'test_leet',
+        'NAME': 'leetchat',
+        'TEST_NAME': 'test_leetchat',
     },
     'mongodb': {
     	'ENGINE': 'django_mongodb_engine',
-    	'NAME': 'leet',
+    	'NAME': 'leetchat',
 	'POST': 8000,
-    	'TEST_NAME': 'test_leet',
+    	'TEST_NAME': 'test_leetchat',
     },
 }
 
