@@ -6,26 +6,33 @@
     <script>
         var chat_room_name = '{{ room_name }}';
         var chat_user_name = '{{ user_name }}';
+        var timestamp = {{ timestamp }};
     </script>
 </head>
 <body>
     <div>
-        <h3>{{ user_name }}</h3>
+        <h3>{{ user_name }} @ {{ room_name }}</h3>
         <input id="id_msg" name="msg" value="" placeholder="say something here ..." >
     </div>
     <ul id="id_chats">
     </ul>
     <script>
     $(function(){
-        function pull(){
+        function pull(tt){
             $.ajax({
-                url: '/chat/pull/'+chat_room_name+'/',
+                url: '/chat/pull/'+chat_room_name+'/'+tt+'/',
                 type: 'GET',
-                dataType: 'html',
+                dataType: 'json',
                 success: function(data){
-                    console.log(data);
-                    $('#id_chats').prepend('<li>'+data+'</li>');
-                    pull();
+                    if(data){
+                        console.log(data);
+                        if(data.message){
+                            $('#id_chats').prepend('<li>'+data.message+'</li>');
+                        }
+                        pull(data.timestamp);
+                    }else{
+                        pull(new Date().getTime() *1000);
+                    }
                 }
             });
         }
@@ -34,6 +41,7 @@
             $.ajax({
                 url: '/chat/message/',
                 type: 'POST',
+                cache: false,
                 data: {room_name:chat_room_name,user_name:chat_user_name,msg:$('#id_msg').val()},
                 dataType: 'html',
                 success: function(data){
@@ -48,7 +56,7 @@
                 send_message();
             }
         });
-        pull();
+        pull(timestamp);
     });
     </script>
 </body>
