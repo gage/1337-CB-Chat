@@ -1,0 +1,176 @@
+/*
+* colors
+*
+*/
+
+@leet_blue:#41B6EA;
+@min_page_height:1000px;
+
+html, body { 
+margin: 0; 
+padding: 0; 
+
+}
+
+ul, ol, li {
+list-style: none;
+}
+
+a {
+text-decoration: none;
+outline: none;
+}
+
+
+/*
+*	top_bar
+*/
+#top_bar{
+	background: #2C4056;
+	color: white;
+	height: 1.8em;
+	font-size: 0.8em;
+	padding: 2px 2px 0px 6px;
+	color: white;
+	
+	#auth{
+		float:right;
+		ul{
+			margin:0;
+			padding:0;
+			li{
+				float: left;
+				list-style-type: none;
+				margin: 0px 0px 0px 0px;
+				padding: 0px 0px 0px 0px;
+				white-space: nowrap;
+				a{
+					color: white;
+					margin-right: 8px;
+					font-weight: bold;
+					text-decoration: none;
+				}
+			
+			}
+		
+		}
+	}
+	
+	#show_user{
+		float: right;
+		margin-right: 0.5em;
+		a{
+			color:white;
+			margin-right: 8px;
+			text-decoration: none;
+		
+		}
+	}
+	
+	ul{
+		margin:0;
+		padding:0;
+		li{
+			float: left;
+			list-style-type: none;
+			margin: 0px 0px 0px 0px;
+			padding: 0px 0px 0px 0px;
+			white-space: nowrap;
+			a{
+				color: white;
+				margin-right: 8px;
+				font-weight: bold;
+				text-decoration: none;
+			}
+		}
+	
+	}
+	
+	
+}
+
+
+/*
+*	body
+*/
+#main_body{
+	
+	#header{
+		height: 5.3em;
+		margin: 0;
+		background-color: @leet_blue;
+		color: white;
+		padding: 4px 8px 0px 6px;
+		position: relative;
+		
+		
+	}	
+	
+	#content{
+		min-height:@min_page_height;
+		
+		#chat_wrapper{
+			#chat_left_col{
+				min-height:@min_page_height;
+				width:20%;
+				float:left;
+				background-color: #DFE3F7;
+			}
+			
+			#chat_right_col{
+				min-height:@min_page_height;
+				width:80%;
+				float:left;
+				
+				background-color: white ;
+			}
+		}
+	}
+	
+	#footer{
+		
+		width: 100%;
+		margin: 0px auto;
+		height: 125px;
+		background-color: @leet_blue;
+		#footer_wrapper{
+			width: 1100px;
+			margin: 0px auto;
+			p{
+				font: normal 11px Arial, Helvetica, sans-serif;
+				color: white;
+				float: left;
+				padding: 18px 0 0;	
+			}
+			
+			a{
+				color: white;
+				text-decoration: none;
+				outline: none;
+			}
+			
+			ul{
+				float: right;
+				li{
+					float: left;
+					padding: 15px 0 0 35px;
+					a{	color: white;
+						text-decoration: none;
+						outline: none;
+					}
+					
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
