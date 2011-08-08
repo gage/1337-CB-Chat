@@ -26,8 +26,6 @@ urlpatterns = patterns('',
     #module views
     (r'^registration/', include('registration.urls')),
     (r'^chats/', include('chats.urls')),
-
-    (r'^chatserver/(?P<url>.*)$', 'httpproxy.views.proxy'),
 )
 
 if settings.DEBUG is False and (settings.SITE_DOMAIN == 'localhost' or settings.SITE_DOMAIN == 'localhost.local'):   #if DEBUG is True it will be served automatically
