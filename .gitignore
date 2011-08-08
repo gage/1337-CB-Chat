@@ -22,5 +22,4 @@ cb_admin/ebin/*.beam
 *.project
 *.pyc
 
-
 leet/configs/common/settings_local.py

@@ -1,27 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
-<div id=chat_wrapper>
-	<div id=chat_left_col>
-		<form id=chatroom_create_form>
+<div id="chat_wrapper">
+	<div id="chat_left_col">
+		<form id="chatroom_create_form">
 		New Chatroom title: <input type="text" name="chatroom_title" value="New room" /><br />
 		<input type="submit" value="Submit" />
 		</form>
-		
+
 		<br>
-		<div id='chatroom_list'>
+		<div id="chatroom_list">
 			Chat room list:
-			<ul>	
+			<ul>
 				{% for chatroom in chatrooms%}
-					<li><div class='chat_room_id' id='{{chatroom.id}}'><a href="">{{chatroom.title}}</a></div></li>
+					<li><div class="chat_room_id" id="{{chatroom.id}}"><a href="">{{chatroom.title}}</a></div></li>
 				{% endfor %}
 			</ul>
-		
+
 		</div>
-		
+
 	</div>
-	
-	<div id=chat_right_col>
-		<div id=chat_room_page>
+
+	<div id="chat_right_col">
+		<div id="chat_room_page">
 			create or join a chat room from left
 		</div>
 	</div>
@@ -29,36 +29,44 @@
 <script>
 	$("#chatroom_create_form").submit(function(){
 		var t=$("input:first").val();
-		
-		
+
+
 		$.ajax({
 	        url : '{% url create-chatroom %}',
 	        type: 'POST',
-	        data: {title:t}, 
+	        data: {title:t},
 	        dataType : 'json',
 	        success : function (result) {
 	        	if(result.status==1){
 	        		$("#chatroom_list>ul").append("<li><div class='chat_room_id' id='"+result.data.id +"'><a href=''>"+result.data.title +"</a></div></li>")
-	        		
+
 	        	}
-	            
+
 	        }
-	    });	
-		
+	    });
+
 		return false
 	});
-	
+
 	$(".chat_room_id").click(function(){
 		var room_id = $(this).attr("id");
 		$("#chat_room_page").children().remove();
-		$("#chat_room_page").load("/chats/chatroom/"+room_id +"/?name={{user.username}}");
-		
-		
+        //$("#chat_room_page").load("/chats/chatroom/"+room_id +"/?name={{user.username}}");
+        $.ajax({
+            url: "/chats/chatroom/"+room_id +"/?name={{user.username}}",
+            type: "GET",
+            dataType: "html",
+            success: function(data){
+                $("#chat_room_page").html(data);
+            }
+        });
+
+
 		return false;
-	
+
 	});
-	
-	
+
+
 
 </script>
 </div>
