@@ -1,0 +1,59 @@
+
+<body>
+	<script>
+        var chat_room_name = '{{ room.title }}';
+        var chat_user_name = '{{ user.username }}';
+        var timestamp = {% now "U" %};
+    </script>
+    
+    <div>
+        <h3>{{ user.username }} @ {{ room.title }}</h3>
+        <input id="id_msg" name="msg" value="" placeholder="say something here ..." >
+    </div>
+    <ul id="id_chats">
+    </ul>
+    <script>
+    $(function(){
+        function pull(tt){
+            $.ajax({
+                url: '/chatserver/chat/pull/'+chat_room_name+'/'+tt+'/',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data){
+                    if(data){
+                        console.log(data);
+                        if(data.message){
+                            $('#id_chats').prepend('<li>'+data.message+'</li>');
+                        }
+                        pull(data.timestamp);
+                    }/*else{
+                        pull(new Date().getTime() *1000);
+                    }*/
+                }
+            });
+        }
+
+        function send_message(){
+            $.ajax({
+                url: '/chatserver/chat/message/',
+                type: 'POST',
+                cache: false,
+                data: {room_name:chat_room_name,user_name:chat_user_name,msg:$('#id_msg').val()},
+                dataType: 'html',
+                success: function(data){
+                    console.log(data);
+                    $('#id_msg').val('');
+                }
+            });
+        }
+        $('#id_msg').keypress(function(e){
+            var code = (e.keyCode ? e.keyCode : e.which);
+            if(code==13){
+                send_message();
+            }
+        });
+        pull(timestamp);
+    });
+    </script>
+</body>
+
