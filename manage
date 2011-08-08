@@ -1,2 +1,2 @@
 #!/bin/sh
-python ./leet/configs/${DEPLOYMENT_TARGET:="common"}/manage.py $*
+python ./leet/configs/${DEPLOYMENT_TARGET:="common"}/manage.py $* 8080

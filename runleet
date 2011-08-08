@@ -1,0 +1,2 @@
+#!/bin/sh
+./chat/start-dev.sh
