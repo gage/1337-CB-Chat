@@ -2,12 +2,14 @@
 {% load i18n %}
 <html>
 <head>
-
+    <title>Leet Chat - 1337</title>
 	<link rel="stylesheet/less" href="{{ STATIC_URL }}less/base.less" type="text/css" />
     <script src="{{ STATIC_URL }}js/lib/less.js"></script>
 	<script src="{{ STATIC_URL }}js/lib/jquery-1.6.1.min.js"></script>
 	<script src="{{ STATIC_URL }}js/lib/auth.js"></script>
-	
+    <script>
+        var origin_title = document.title;
+    </script>
     {% block extrahead %}{% endblock %}
 </head>
 <body>
@@ -24,13 +26,13 @@
 				{% endif %}
 			</ul>
 		</div>
-		
-		{%if user.is_authenticated %}		
+
+		{%if user.is_authenticated %}
 		<div id="show_user">
 			Logged in as <b><a href="">{{ user.username }}</a></b>
 		</div>
 		{% endif %}
-		
+
 		<ul>
 			<li> <a href="">Home </a></li>
 			{%if user.is_authenticated %}
@@ -40,44 +42,35 @@
 			<li> <a href="/chats/chat_home/">Chat </a></li>
 		</ul>
 	</div>
-	
+
 	<div id='main_body'>
 		<div id='header'>
 			<h1> 1337 Leet</h1>
 		</div>
-		
+
 		<div id='content'>
 			{% block content %}
 			<div id='left_col'>
 				left
 			</div>
-			
-			
+
 			<div id='right_col'>
 				right
 			</div>
 			{% endblock %}
 		</div>
-		
+
 		<div id='footer'>
 			<div id='footer_wrapper'>
-			   <p>© Copyright <a href="http://1337.org.tw/">1337.org</a> 2011</p> 
-		       <ul> 
-		          
-		         <li><a href="http://geniecapital.com"><img src="http://1337.org.tw/media/images/F_genie_capital.png" alt="" /></a></li> 
-		         <li class="gulu"><a href="http://gulu.com/"><img src="http://1337.org.tw/media/images/F_gulu.png" alt=""/></a></li> 
+			   <p>© Copyright <a href="http://1337.org.tw/">1337.org</a> 2011</p>
+		       <ul>
+
+		         <li><a href="http://geniecapital.com"><img src="http://1337.org.tw/media/images/F_genie_capital.png" alt="" /></a></li>
+		         <li class="gulu"><a href="http://gulu.com/"><img src="http://1337.org.tw/media/images/F_gulu.png" alt=""/></a></li>
 		       </ul>
-		     </div> 
+		     </div>
 		</div>
-	
-	
+
 	</div>
-	
-	
-
-
-
-
-
 </body>
 </html>

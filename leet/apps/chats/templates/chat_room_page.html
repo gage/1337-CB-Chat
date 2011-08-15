@@ -14,22 +14,80 @@
     </ul>
     <script>
     $(function(){
+
+        function change_title(old_name, new_name, timeout){
+            document.title = new_name;
+            ct = setTimeout(function(){change_title(new_name, old_name, timeout)}, timeout);
+        }
+
+        function title_controller(){
+            $this = this;
+
+            this.is_start = false;
+
+            this.start = function(old_name, new_name, timeout){
+                if($this.is_start){
+                    $this.stop();
+                    $this.is_start = true;
+                    change_title(old_name, new_name, timeout);
+                }else{
+                    $this.is_start = true;
+                    change_title(old_name, new_name, timeout);
+                }
+            }
+
+            this.stop = function(){
+                $this.is_start = false;
+                if(typeof(ct) != "undefined"){
+                    clearTimeout(ct);
+                    document.title = origin_title;
+                }
+            }
+        }
+        if(typeof(tclr) != "undefined"){
+            if(tclr.stop){
+                tclr.stop();
+                tclr = {};
+            }
+        }
+        var tclr = new title_controller();
+
         function pull(tt){
-            $.ajax({
+
+            if(typeof(pull_request) != "undefined"){
+                pull_request.abort();
+            }
+
+            pull_request = $.ajax({
                 url: '/chatserver/chat/pull/'+chat_room_name+'/'+tt+'/',
                 type: 'GET',
                 dataType: 'json',
+                cache: false,
                 success: function(data){
                     if(data){
                         console.log(data);
-                        if(data.message){
-                            $('#id_chats').prepend('<li>'+data.message+'</li>');
+                        if(data.messages){
+                            for(var i in data.messages){
+                                var message = data.messages[i];
+                                $('#id_chats').prepend('<li>'+message.username+':'+message.msg+'</li>');
+                            }
+                            if(chat_user_name == message.username){
+                                if(tclr.stop)
+                                    tclr.stop();
+                            }else{
+                                tclr.start(origin_title, message.username+" says:"+message.msg, 2000);
+                            }
                         }
-                        pull(data.timestamp);
+                        if(data.timestamp){
+                            timestamp = data.timestamp;
+                            console.log('has data: pull - '+data.timestamp);
+                            setTimeout(function() { pull(data.timestamp); }, 20);
+                        }
                     }else{
-                        pull(timestamp);
+                        console.log('no data: pull - '+timestamp);
+                        setTimeout(function() { pull(timestamp); }, 20);
                     }
-                }
+                },
             });
         }
 
@@ -37,7 +95,6 @@
             $.ajax({
                 url: '/chatserver/chat/message/',
                 type: 'POST',
-                cache: false,
                 data: {room_name:chat_room_name,user_name:chat_user_name,msg:$('#id_msg').val()},
                 dataType: 'html',
                 success: function(data){
@@ -46,13 +103,30 @@
                 }
             });
         }
+
+        function get_time(){
+            $.ajax({
+                url: '/chatserver/chat/get_time/'+chat_room_name+'/',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data){
+                    console.log('get_time');
+                    console.log(data);
+                    pull(data.timestamp);
+                }
+            });
+        }
         $('#id_msg').keypress(function(e){
             var code = (e.keyCode ? e.keyCode : e.which);
             if(code==13){
                 send_message();
             }
+        }).focus(function(e){
+            if(typeof(tclr) != "undefined")
+                if(tclr.stop)
+                    tclr.stop();
         });
-        pull(timestamp);
+        get_time();
     });
     </script>
 </div>

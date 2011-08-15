@@ -23,15 +23,25 @@
                 url: '/chat/pull/'+chat_room_name+'/'+tt+'/',
                 type: 'GET',
                 dataType: 'json',
+                cache: false,
                 success: function(data){
+                    console.log(data);
                     if(data){
                         console.log(data);
-                        if(data.message){
-                            $('#id_chats').prepend('<li>'+data.message+'</li>');
+                        if(data.messages){
+                            for(var i in data.messages){
+                                var message = data.messages[i];
+                                $('#id_chats').prepend('<li>'+message.username+':'+message.msg+'</li>');
+                            }
                         }
-                        pull(data.timestamp);
+                        if(data.timestamp){
+                            timestamp = data.timestamp;
+                            console.log('has data: pull - '+data.timestamp);
+                            setTimeout(function() { pull(data.timestamp); }, 20);
+                        }
                     }else{
-                        pull(timestamp);
+                        console.log('no data: pull - '+timestamp);
+                        setTimeout(function() { pull(timestamp); }, 20);
                     }
                 }
             });
@@ -41,12 +51,24 @@
             $.ajax({
                 url: '/chat/message/',
                 type: 'POST',
-                cache: false,
                 data: {room_name:chat_room_name,user_name:chat_user_name,msg:$('#id_msg').val()},
                 dataType: 'html',
                 success: function(data){
                     console.log(data);
                     $('#id_msg').val('');
+                }
+            });
+        }
+
+        function get_time(){
+            $.ajax({
+                url: '/chat/get_time/'+chat_room_name+'/',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data){
+                    console.log('get_time');
+                    console.log(data);
+                    pull(data.timestamp);
                 }
             });
         }
@@ -56,8 +78,9 @@
                 send_message();
             }
         });
-        pull(timestamp);
+        get_time();
     });
+
     </script>
 </body>
 </html>
